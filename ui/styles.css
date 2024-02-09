@@ -1,0 +1,207 @@
+body {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    color: #ffffff;
+    font-family: monospace;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 36px;
+    background-color: #081828;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1; /* Ensure the game container is above other elements */
+    opacity: 95%;
+}
+
+#game-context {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #0DE6B9;
+    z-index: 2; /* Place it above the game container */
+    
+}
+
+#logo {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    top: -22.5%;
+}
+
+#context-text {
+    display: flex;
+    flex-direction: column;
+}
+
+#alphabet-text {
+    position: relative;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 0 0 10px #0DE6B9;
+    bottom: 2px;
+    left: 30%;
+    
+
+}
+
+#order-text {
+    position: relative;
+    color: #ffffff;
+    font-size: 14px;
+    margin-top: 5px;
+    bottom: 34px;
+    left: 95%;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+#row3 {
+    justify-content: center;
+}
+
+.character-container {
+    width: 100px; /* Set a fixed width */
+    height: 100px; /* Set a fixed height */
+    border-radius: 10px; /* Adjusted border radius */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #0B2B42 0%, #0B273B 100%);
+    color: #78B2CC;
+    border: 1px solid #78B2CC;
+    margin: 4px;
+    position: relative;
+    font-family: sans-serif;
+    z-index: 0; /* Place the character container behind the inner rectangle */
+    
+}
+
+.character-container::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+}
+
+.correct {
+    color: #0CE6B9 !important;
+    background: radial-gradient(circle at center, #004C47 0%, #043737) !important;
+    border: 1px solid #0CE6B9 !important;
+    
+}
+
+.incorrect {
+    color: #ffffff !important;
+    background: radial-gradient(circle at center, #DF5F62, #7B3F47) !important;
+    border: 1px solid #f5a8ac !important;
+}
+
+
+#timer-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #081828;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    font-family: monospace;
+    border-radius: 10px; /* Add rounded corners */
+}
+
+#timer-fill {
+    height: 100%;
+    background-color: #EF4E1B;
+    transition: width 0.1s linear;
+    border-radius: 1px; /* Add rounded corners */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#start-button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#start-button {
+    padding: 15px 30px;
+    font-size: 24px;
+    background-color: #4A98CE;
+    color: #ffffff;
+    border: 2px solid #4A98CE;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: monospace;
+}
+
+#inner-rectangle {
+    position: absolute;
+    top: 107px; /* Adjust the top position to match the space for the timer bar */
+    left: 15px; /* Adjust the left position to match the padding of the game container */
+    right: 15px; /* Adjust the right position to match the padding of the game container */
+    bottom: 125px; /* Adjust the bottom position to leave space for the timer bar */
+    border-radius: 20px;
+    z-index: -1;
+}
+
+#outcome-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 1px;
+    border-radius: 1px;
+    width: 50%;
+    text-align: center;
+    background: linear-gradient(180deg, #0B2B42 0%, #0B273B 100%);
+    border: 2px solid #78B2CC;
+    
+}
+
+#outcome {
+    font-size: 20px; /* Reduced font size */
+    font-family: monospace;
+    position: relative;
+}
+
+.success #outcome-container {
+    background: linear-gradient(180deg, #004C47 0%, #043737 100%);
+    border-color: #0CE6B9;
+    
+
+}
+
+.fail #outcome-container {
+    background: linear-gradient(180deg, #DF5F62 0%, #7B3F47 100%);
+    border-color: #043737;
+}
+
+#created-by {
+    margin-top: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+}
